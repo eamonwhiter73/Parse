@@ -41,7 +41,7 @@ Parse.Cloud.define("sendpushnear", function(request, response) {
         data: {
             alert: "You are near a pix!"
         }
-    }, {
+    , { useMasterKey: true }, {
     success: function() {
         response.success();
         console.log("success: Parse.Push.send did send push");
