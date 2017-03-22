@@ -5,7 +5,9 @@ var express = require('express');
 var ParseServer = require('parse-server').ParseServer;
 var path = require('path');
 
-var databaseUri = process.env.DATABASE_URI || process.env.MONGODB_URI;
+var databaseUri = "mongodb://<dbuser>:<dbpassword>@ds133450.mlab.com:33450/heroku_b4twmwl4";
+
+//var databaseUri = mongodb://127.0.0.1:27017
 
 if (!databaseUri) {
   console.log('DATABASE_URI not specified, falling back to localhost.');
@@ -14,11 +16,18 @@ if (!databaseUri) {
 var api = new ParseServer({
   databaseURI: databaseUri || 'mongodb://localhost:27017/dev',
   cloud: process.env.CLOUD_CODE_MAIN || __dirname + '/cloud/main.js',
-  appId: process.env.APP_ID || 'myAppId',
-  masterKey: process.env.MASTER_KEY || '', //Add your master key here. Keep it secret!
-  serverURL: process.env.SERVER_URL || 'http://localhost:1337/parse',  // Don't forget to change to https if needed
+  appId: process.env.APP_ID || 'com.eamon.sneek',
+  masterKey: process.env.MASTER_KEY || 'blahjour7', //Add your master key here. Keep it secret!
+  serverURL: process.env.SERVER_URL || 'http://pacific-retreat-78013.herokuapp.com/parse',  // Don't forget to change to https if needed
   liveQuery: {
     classNames: ["Posts", "Comments"] // List of classes to support for query subscriptions
+  },
+  push: {
+    ios: {
+      pfx: 'pixoveryrelease10.p12',
+      passphrase: 'bonjour3', // optional password to your p12/PFX
+      bundleId: 'com.eamon.sneek',
+    }
   }
 });
 // Client-keys like the javascript key or the .NET key are not necessary with parse-server
