@@ -27,7 +27,7 @@ var api = new ParseServer({
       pfx: 'pixoveryrelease10.p12',
       passphrase: 'bonjour3', // optional password to your p12/PFX
       bundleId: 'com.eamon.sneek',
-,//    }
+    }
   }
 });
 // Client-keys like the javascript key or the .NET key are not necessary with parse-server
