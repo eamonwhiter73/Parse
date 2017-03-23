@@ -15,7 +15,8 @@ Parse.Cloud.define("sendpush", function(request, response) {
 	Parse.Push.send({
         where: query,
         data: {
-            alert: "One of your pix was matched by " + request.params.username
+            alert: "One of your pix was matched by " + request.params.username,
+            "content-available": 1
         }
     }, { useMasterKey: true }, {
     success: function() {
@@ -39,7 +40,8 @@ Parse.Cloud.define("sendpushnear", function(request, response) {
     Parse.Push.send({
         where: query,
         data: {
-            alert: "You are near a pix!"
+            alert: "You are near a pix!",
+            "content-available": 1
         }
     }, { useMasterKey: true }, {
     success: function() {
