@@ -14,7 +14,7 @@ if (!databaseUri) {
 }
 
 var api = new ParseServer({
-  databaseURI: databaseUri || 'mongodb://localhost:27017/dev',
+  databaseURI: databaseUri,// || 'mongodb://localhost:27017/dev',
   cloud: process.env.CLOUD_CODE_MAIN || __dirname + '/cloud/main.js',
   appId: process.env.APP_ID || 'com.eamon.sneek',
   masterKey: process.env.MASTER_KEY || 'blahjour7', //Add your master key here. Keep it secret!
@@ -27,7 +27,7 @@ var api = new ParseServer({
       pfx: 'pixoveryrelease10.p12',
       passphrase: 'bonjour3', // optional password to your p12/PFX
       bundleId: 'com.eamon.sneek',
-    }
+,//    }
   }
 });
 // Client-keys like the javascript key or the .NET key are not necessary with parse-server
