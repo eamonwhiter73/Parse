@@ -24,7 +24,7 @@ var api = new ParseServer({
   },
   push: {
     ios: {
-      pfx: 'pixoveryrelease10.p12',
+      pfx: path.join(__dirname, 'pixoveryrelease10.p12'),
       passphrase: 'bonjour3', // optional password to your p12/PFX
       bundleId: 'com.eamon.sneek'
     }
