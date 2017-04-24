@@ -5,9 +5,17 @@ var express = require('express');
 var ParseServer = require('parse-server').ParseServer;
 var path = require('path');
 
-var databaseUri = "mongodb://heroku_b4twmwl4:8m7tt51k9hp77d4lpoheotoirh@ds133450.mlab.com:33450/heroku_b4twmwl4";
+//var databaseUri = "mongodb://admin:KYJhk4s9N6FL@ds133450.mlab.com:33450/parse";
 
-//var databaseUri = mongodb://127.0.0.1:27017/dev
+if(process.env.OPENSHIFT_MONGODB_DB_PASSWORD){
+    var connection_string = process.env.OPENSHIFT_MONGODB_DB_USERNAME + ":" +
+    process.env.OPENSHIFT_MONGODB_DB_PASSWORD + "@" +
+    process.env.OPENSHIFT_MONGODB_DB_HOST + ':' +
+    process.env.OPENSHIFT_MONGODB_DB_PORT + '/' +
+    process.env.OPENSHIFT_APP_NAME;
+};
+
+var databaseUri = connection_string;
 
 if (!databaseUri) {
   console.log('DATABASE_URI not specified, falling back to localhost.');
