@@ -5,7 +5,7 @@ var express = require('express');
 var ParseServer = require('parse-server').ParseServer;
 var path = require('path');
 
-var databaseUri = "mongodb://ewizard86:blahjour7@ds133450.mlab.com:33450/heroku_b4twmwl4";
+var databaseUri = "mongodb://localhost:27017/dev";
 
 //var databaseUri = mongodb://127.0.0.1:27017
 
@@ -18,7 +18,7 @@ var api = new ParseServer({
   cloud: process.env.CLOUD_CODE_MAIN || __dirname + '/cloud/main.js',
   appId: process.env.APP_ID || 'com.eamon.sneek',
   masterKey: process.env.MASTER_KEY || 'blahjour7', //Add your master key here. Keep it secret!
-  serverURL: process.env.SERVER_URL || 'http://pacific-retreat-78013.herokuapp.com/parse',  // Don't forget to change to https if needed
+  serverURL: process.env.SERVER_URL || 'http://localhost:1337/parse',  // Don't forget to change to https if needed
   liveQuery: {
     classNames: ["Posts", "Comments"] // List of classes to support for query subscriptions
   },
