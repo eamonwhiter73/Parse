@@ -7,15 +7,15 @@ var path = require('path');
 
 //var databaseUri = "mongodb://admin:KYJhk4s9N6FL@ds133450.mlab.com:33450/parse";
 
-if(process.env.OPENSHIFT_MONGODB_DB_PASSWORD){
+/*if(process.env.OPENSHIFT_MONGODB_DB_PASSWORD){
     var connection_string = process.env.OPENSHIFT_MONGODB_DB_USERNAME + ":" +
     process.env.OPENSHIFT_MONGODB_DB_PASSWORD + "@" +
     process.env.OPENSHIFT_MONGODB_DB_HOST + ':' +
     process.env.OPENSHIFT_MONGODB_DB_PORT + '/' +
     process.env.OPENSHIFT_APP_NAME;
-};
+};*/
 
-var databaseUri = connection_string;
+var databaseUri = "mongodb://admin:pbADnVJ_4gQs@parse-eamonbenproject.rhcloud.com:27017/parse";
 
 if (!databaseUri) {
   console.log('DATABASE_URI not specified, falling back to localhost.');
