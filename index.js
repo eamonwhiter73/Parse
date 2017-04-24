@@ -5,7 +5,7 @@ var express = require('express');
 var ParseServer = require('parse-server').ParseServer;
 var path = require('path');
 
-var databaseUri = "mongodb://localhost:27017/dev";
+var databaseUri = "mongodb://ewizard86:bonjour3@ds133450.mlab.com:33450/heroku_b4twmwl4";
 
 //var databaseUri = mongodb://127.0.0.1:27017
 
