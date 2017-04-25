@@ -15,7 +15,7 @@ var path = require('path');
     process.env.OPENSHIFT_APP_NAME;
 };*/
 
-var databaseUri = "mongodb://admin:pbADnVJ_4gQs@parse-eamonbenproject.rhcloud.com:27017/parse";
+var databaseUri = "mongodb://heroku_b4twmwl4:8m7tt51k9hp77d4lpoheotoirh@ds133450.mlab.com:33450/heroku_b4twmwl4";
 
 if (!databaseUri) {
   console.log('DATABASE_URI not specified, falling back to localhost.');
